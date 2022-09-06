@@ -15,8 +15,8 @@ customer3 = Customer.create(name: "Wastalas Kiprop")
 
 
 # goods instances
-item1 = Goods.create(name: "carrots", amount: 20, farmer_id: farmer1.id, customer_id: customer3.id)
-item2 = Goods.create(name: "beans", amount: 10, farmer_id: farmer2.id, customer_id: customer1.id)
-item3 = Goods.create(name: "maize", amount: 6, farmer_id: farmer3.id, customer_id: customer2.id)
+item1 = Good.create(name: "carrots", amount: 20, farmer_id: farmer1.id, customer_id: customer3.id)
+item2 = Good.create(name: "beans", amount: 10, farmer_id: farmer2.id, customer_id: customer1.id)
+item3 = Good.create(name: "maize", amount: 6, farmer_id: farmer3.id, customer_id: customer2.id)
 
 puts "✅ Done seeding!"
