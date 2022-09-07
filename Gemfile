@@ -37,16 +37,15 @@ gem "require_all", "~> 3.0"
 # These gems will only be used when we are running the application locally
 group :development do
   gem "pry", "~> 0.14.1"
-  gem "sqlite3"
   # Automatically reload when there are changes
   # https://github.com/alexch/rerun
   gem "rerun"
 end
 
-gem :production do
-  gem "pg"
-  gem "activerecord-postgresql-adapter"
-end
+# gem :production do
+#   gem "pg"
+#   gem "activerecord-postgresql-adapter"
+# end
 
 # These gems will only be used when we are running tests
 group :test do
