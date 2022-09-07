@@ -2,17 +2,17 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
-  get "/items" do
+  get "/" do
     goods = Item.all
     goods.to_json
   end
 
-  get '/items/:id' do
+  get '/:id' do
     good = Item.find(params[:id])
     good.to_json
   end
 
-  post '/items' do
+  post '/' do
     good = Item.create(
       name: params[:name],
       amount: params[:amount],
@@ -21,7 +21,7 @@ class ApplicationController < Sinatra::Base
     )
   end
 
-  patch '/items/:id' do
+  patch '/:id' do
     good = Item.find(params[:id])
     good.update(
       name: params[:name],
@@ -32,7 +32,7 @@ class ApplicationController < Sinatra::Base
     good.to_json
   end
 
-  delete '/items/:id' do
+  delete '/:id' do
     good = Item.find(params[:id])
     good.destroy
     good.to_json
