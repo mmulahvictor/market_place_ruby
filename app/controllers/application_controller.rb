@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
       amount: params[:amount],
       image_url: params[:image_url],
       farmer_id: params[:farmer_id],
-      customer_id: params[:customer_id],
+      customer_id: params[:customer_id]
     )
   end
 
