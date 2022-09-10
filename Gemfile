@@ -42,11 +42,6 @@ group :development do
   gem "rerun"
 end
 
-gem :production do
-  gem 'pg', '~> 1.4', '>= 1.4.3'
-  gem 'sinatra-contrib', '~> 2.2', '>= 2.2.2',require: false
-end
-
 # These gems will only be used when we are running tests
 group :test do
   gem "database_cleaner", "~> 2.0"
