@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby "2.7.4"
+
 # A DSL for quickly creating web applications
 # https://github.com/sinatra/sinatra
 gem "sinatra", "~> 2.1"
@@ -23,6 +25,8 @@ gem "activerecord", "~> 6.1"
 # Configures common Rake tasks for working with Active Record
 # https://github.com/sinatra-activerecord/sinatra-activerecord
 gem "sinatra-activerecord", "~> 2.0"
+
+gem 'sinatra-contrib', '~> 2.2', '>= 2.2.2',require: false
 
 # Run common tasks from the command line
 # https://github.com/ruby/rake
@@ -48,4 +52,8 @@ group :test do
   gem "rack-test", "~> 1.1"
   gem "rspec", "~> 3.10"
   gem "rspec-json_expectations", "~> 2.2"
+end
+
+group :production do
+  gem 'pg', '~> 1.4', '>= 1.4.3'
 end
