@@ -58,7 +58,7 @@ class ApplicationController < Sinatra::Base
   post '/farmers' do
     Farmer.create(
       name: params[:name],
-      phone: params[:phone]
+      phone: params[:phone],
       location: params[:location]
     )
   end
