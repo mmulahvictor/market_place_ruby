@@ -2,17 +2,17 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # items
-  get "/" do
+  get "/items" do
     goods = Item.all
     goods.to_json
   end
 
-  get '/:id' do
+  get '/items/:id' do
     good = Item.find(params[:id])
     good.to_json
   end
 
-  post '/' do
+  post '/items' do
     good = Item.create(
       name: params[:name],
       amount: params[:amount],
@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     )
   end
 
-  patch '/:id' do
+  patch '/items/:id' do
     good = Item.find(params[:id])
     good.update(
       name: params[:name],
@@ -34,7 +34,7 @@ class ApplicationController < Sinatra::Base
     good.to_json
   end
 
-  delete '/:id' do
+  delete '/items/:id' do
     good = Item.find(params[:id])
     good.destroy
     good.to_json
