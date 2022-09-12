@@ -50,5 +50,18 @@ class ApplicationController < Sinatra::Base
     customer.update(name: params[:name])
   end
 
+  get "/farmers" do
+    goods = Farmer.all
+    goods.to_json
+  end
+
+  post '/farmers' do
+    Farmer.create(
+      name: params[:name],
+      phone: params[:phone]
+      location: params[:location]
+    )
+  end
+
 end
 
