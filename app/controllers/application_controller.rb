@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # items
   get "/items" do
-    goods = Item.all.to_json
+    Item.all.to_json
   end
 
   get '/items/:id' do
@@ -53,8 +53,14 @@ class ApplicationController < Sinatra::Base
     customer.update(name: params[:name])
   end
 
+  delete '/customers/:id' do
+    customer = Customer.find(params[:id])
+    customer.destroy
+  end
+
+  # farmers
   get "/farmers" do
-    goods = Farmer.all.to_json
+    Farmer.all.to_json
   end
 
   post '/farmers' do
@@ -62,9 +68,13 @@ class ApplicationController < Sinatra::Base
       name: params[:name],
       phone: params[:phone],
       location: params[:location],
-      password: params[:password],
-      confpassword: params[:confpassword]
+      password: params[:password]
     )
+  end
+
+  delete '/farmers/:id' do
+    farmer = Farmer.find(params[:id])
+    farmer.destroy
   end
 
 end
