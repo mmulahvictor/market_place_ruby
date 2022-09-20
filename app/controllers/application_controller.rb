@@ -3,8 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # items
   get "/items" do
-    goods = Item.all
-    goods.to_json
+    goods = Item.all.to_json
   end
 
   get '/items/:id' do
@@ -41,6 +40,10 @@ class ApplicationController < Sinatra::Base
   end
 
   #customers
+  get "/customers" do
+    Customer.all.to_json
+  end
+
   post '/customers' do
     customer = Customer.create(name: params[:name])
   end
@@ -51,8 +54,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/farmers" do
-    goods = Farmer.all
-    goods.to_json
+    goods = Farmer.all.to_json
   end
 
   post '/farmers' do
