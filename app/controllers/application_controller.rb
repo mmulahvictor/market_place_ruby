@@ -61,7 +61,9 @@ class ApplicationController < Sinatra::Base
     Farmer.create(
       name: params[:name],
       phone: params[:phone],
-      location: params[:location]
+      location: params[:location],
+      password: params[:password],
+      confpassword: params[:confpassword]
     )
   end
 
